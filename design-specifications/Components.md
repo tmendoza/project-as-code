@@ -1044,6 +1044,78 @@ print(vm)
 print(vm.SoftwarePackages[0])
 
 ```
-
 In this version, the focus is on defining the entities, their properties, and the relationships between them without delving into implementation specifics. This approach ensures that the document remains relevant regardless of the technology used to implement the model.
+
+## Here is a more Database SQL language type of Domain Model description
+Certainly! Below is an example of how you might represent a virtual machine and its software packages in a Markdown document, complete with properties, relationships, constraints, and triggers.
+
+```markdown
+# Domain Model
+
+## Entity: VirtualMachine
+A virtual machine (VM) is an emulation of a computer system that provides the functionality of a physical computer.
+
+### Properties
+- `ID`: Unique identifier for the VM.
+- `Name`: Human-readable name for the VM.
+- `Status`: Current status of the VM (e.g., running, stopped).
+- `IPAddress`: The IP address assigned to the VM.
+
+### Collections of Entities
+- `SoftwarePackages`: A list of software packages installed on the VM.
+  - **SoftwarePackage**
+    - `PackageID`: Unique identifier for the software package.
+    - `PackageName`: Name of the software package.
+    - `Version`: Current version of the package installed.
+
+### Relationships
+- `HostServer`: Describes a many-to-one relationship where many VMs can be hosted on a single server.
+  - Cardinality: Many-to-One
+  - Navigation: A `HostServerID` property on the VM entity that references the `Server` entity.
+
+### Constraints
+- `NameUnique`: Ensures that each VM has a unique name within a given HostServer.
+- `StatusCheck`: Ensures that the `Status` field only contains valid status values (e.g., 'running', 'stopped').
+
+### Triggers
+- `UpdateLastModified`: When any property of a VM is changed, update the `LastModified` timestamp of the VM.
+  - Condition: Any property change on the VM entity.
+  - Action: Set `LastModified` to the current timestamp.
+
+## Entity: SoftwarePackage
+Represents a software application or package that can be installed on a virtual machine.
+
+### Properties
+- `PackageID`: Unique identifier for the software package.
+- `PackageName`: Name of the software package.
+- `Version`: Current version of the package installed.
+
+### Relationships
+- `VirtualMachines`: Describes a many-to-many relationship where one software package can be installed on many VMs, and each VM can have many software packages.
+  - Cardinality: Many-to-Many
+  - Navigation: A join table `VMSoftware` with `VMID` and `PackageID` as foreign keys.
+
+### Constraints
+- `VersionFormat`: Ensures that the `Version` field follows a specific version format (e.g., Semantic Versioning).
+
+### Triggers
+- `OnInstall`: When a software package is installed on a VM, log the event.
+  - Condition: Insertion of a new record in the `VMSoftware` join table.
+  - Action: Add a new entry to the `InstallationLog` entity detailing the VM, software package, and timestamp.
+
+...
+
+```
+
+In this example:
+
+- Each `VirtualMachine` has properties such as `ID`, `Name`, `Status`, and `IPAddress`.
+- `SoftwarePackages` is a collection within a `VirtualMachine` that lists software installed on the VM.
+- Relationships are defined to other entities, such as `HostServer` for the VMs.
+- Constraints like `NameUnique` and `StatusCheck` are set to maintain data integrity.
+- Triggers like `UpdateLastModified` and `OnInstall` are used to automatically perform actions based on changes to the VM or software package entities.
+
+This is a textual representation and serves as documentation. To implement this model, you would need a database that supports these features and a schema defined in a database-specific language such as SQL.
+
+
 
