@@ -83,6 +83,7 @@ This outline can serve as a template, ensuring that the business case is thoroug
 ## Q: Build me a template based on this outline (ADVICE)
 This is a comprehensive outline for a Business Case document. Here's how you could structure the content for each section in a lean and agile manner:
 
+```markdown
 # Business Case for [Project Name]
 
 ## 1. Executive Summary
@@ -147,6 +148,6 @@ Include any additional supporting materials such as data analysis, detailed fina
 
 ## 11. Approval and Sign-Off
 Secure and document the formal approvals from the relevant decision-makers, confirming the project's green light to proceed.
-
+```
 
 This template encapsulates the essential information required in a business case, formatted in a way that promotes clarity and efficient decision-making. It allows for agility by being modular—each section can be updated independently as new information arises or when project parameters change.
