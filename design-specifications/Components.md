@@ -715,3 +715,226 @@ The below signatures certify that the stakeholders have reviewed and approved th
 ```
 
 This final design document is an extensive blueprint, covering all the necessary design aspects for the
+## Another example
+Certainly! Here's the entire design document structured in markdown format:
+
+```markdown
+# Final Design Document for AKS Java Application Platform
+
+## Table of Contents
+1. [Title](#title)
+2. [Introduction](#introduction)
+3. [Executive Summary](#executive-summary)
+4. [Document Control](#document-control)
+5. [High-Level Architecture](#high-level-architecture)
+6. [Technology Stack](#technology-stack)
+7. [Component Design](#component-design)
+8. [Data Design](#data-design)
+9. [Security Design](#security-design)
+10. [Scalability Design](#scalability-design)
+11. [Disaster Recovery and Business Continuity Design](#disaster-recovery-and-business-continuity-design)
+12. [Network Design](#network-design)
+13. [Monitoring and Observability Design](#monitoring-and-observability-design)
+14. [Approval](#approval)
+
+## Title
+Final Design Document for AKS Java Application Platform
+
+## Introduction
+The introduction provides context for the design document, outlining the purpose and scope of the AKS Java Application Platform. It serves as a brief overview of what readers can expect in the document.
+
+## Executive Summary
+The executive summary offers a high-level overview of the key points and findings presented in the design document. It serves as a quick reference for busy executives and decision-makers who want to understand the project's essence without delving into the details.
+
+## Document Control
+- **Version:** 1.0
+- **Author:** Jane Doe
+- **Date:** November 21, 2023
+- **Approval:** John Smith, CTO
+
+## High-Level Architecture
+1. Integration with enterprise architecture is achieved via Azure services, ensuring that CI/CD, identity management, and data storage are seamlessly connected with Azure DevOps and Azure AD.
+2. High-availability is managed through multi-region AKS clusters, with each cluster capable of automatic failover and disaster recovery.
+3. The core services are hosted on AKS, utilizing Azure Stack for seamless integration with on-premises systems where necessary.
+4. Kubernetes namespaces are employed for multi-tenancy, with network policies enforcing strict data isolation between tenants.
+5. Azure API Management facilitates mobile and remote access, providing robust and secure access controls.
+6. Service discovery is managed by Kubernetes Service and Ingress, simplifying microservices communication within the AKS environment.
+7. Data sovereignty is maintained by adhering to regional data residency laws, leveraging Azure Policy for compliance.
+8. Secure data transmission within the system is ensured by using HTTPS for web traffic and SSH for administrative tasks.
+9. Azure AD, in conjunction with Kubernetes RBAC, manages user roles and access levels, allowing fine-grained access control.
+10. External services and third-party APIs are securely integrated via API gateways, ensuring that data remains secure while allowing for extended functionality.
+
+## Technology Stack
+1. Azure Cosmos DB provides a globally distributed database service, supporting multiple data models and offering seamless scalability.
+2. Backend development is powered by Java using Spring Boot, with the frontend crafted in React for a dynamic and responsive user interface.
+3. Software and tools are chosen for their semantic versioning support, ensuring compatibility and ease of updates.
+4. AKS provides a scalable environment that can dynamically adjust resources in response to increasing service requests.
+5. The technology stack is supported by Microsoft Azure, with an extensive community around open-source technologies.
+6. Cost-effectiveness is a key consideration, with the Azure pay-as-you-go model reducing upfront costs.
+7. The solution runs on Linux containers within AKS, providing an OS-agnostic environment.
+8. System monitoring and logging are handled by Azure Monitor and Azure Log Analytics, offering a comprehensive view of system health and activity.
+9. Single Sign-On (SSO) capabilities are enabled via Azure AD integration.
+10. Azure Backup and Azure Site Recovery manage data backup and disaster recovery processes, ensuring data integrity and system resilience.
+
+## Component Design
+1. The system's core components include a user-friendly interface, robust authentication service, efficient ticket management, and a timely notification service.
+2. Azure AD handles user authentication, with OAuth 2.0 ensuring secure authorization flows.
+3. The ticketing workflow is facilitated by specialized services managing ticket lifecycle, from creation to resolution, supported by a user notification system.
+4. Components interact through RESTful APIs, with detailed documentation provided via Swagger.
+5. Inter-component dependencies are managed through Azure's managed services and connections to external data sources.
+6. Performance is enhanced by Redis, which provides rapid data caching capabilities.
+7. Asynchronous programming models are employed for concurrency, with ACID-compliant transaction management.
+8. Stateful components utilize Azure Managed Disks for persistent storage, ensuring data durability.
+9. The system supports rolling updates and employs blue-green deployment strategies to minimize downtime.
+10. Security is a cornerstone, with Azure Firewall and Azure Security Center protecting against threats, and Kubernetes' built-in features safeguarding the containerized environment.
+
+## Data Design
+1. The data model is optimized for efficient search and retrieval operations, focusing on tickets, users, and audit logs.
+2. Transactions within Cosmos DB and application-level concurrency controls ensure data integrity across the system.
+3. Azure Key Vault and encryption-at-rest within Cosmos DB protect sensitive data.
+4. Data retention policies comply with legal and business requirements, ensuring that data is kept only as long as necessary.
+5. Azure Blob Storage houses large data sets, with Cosmos DB providing optimized indexing for quick data retrieval.
+6. Time-based archiving strategies transfer older data to cold storage, reducing costs while maintaining accessibility.
+7. Cosmos DB's partition keys enable effective data sharding, enhancing query performance.
+8. Azure Data Factory streamlines data migration processes, minimizing impact during system upgrades.
+9. Configuration items are versioned using Azure App Configuration, supporting easy rollbacks and configuration changes.
+10. Regular backups and restoration procedures are tested and documented, aligning with Azure's best practices.
+
+## Security Design
+1. Azure AD, augmented with multi-factor authentication, secures user access, while TLS and Azure's encryption safeguard data.
+2. The system meets ISO 27001 and SOC 2 standards, with Azure's compliance features facilitating adherence to these frameworks.
+3. Comprehensive security event logging is enabled, with real-time monitoring provided by Azure Security Center.
+4. Azure Sentinel, a powerful SIEM system, detects and mitigates threats proactively.
+5. GDPR compliance is a priority, with encryption and strict data access controls protecting user privacy.
+6. Azure AD and Kubernetes RBAC enforce access policies, ensuring that users can access only the resources necessary for their role.
+7. OAuth scopes and rate limiting defend against API abuse, with regular security audits assessing the robustness of API endpoints.
+8. Azure Automation streamlines the patch management process, keeping the system secure and up-to-date.
+9. A robust disaster recovery strategy is in place, with multi-region deployment capabilities and routine DR exercises.
+10. Network security is maintained through Azure Network Security Groups and Azure Firewall, with strict policies governing both inbound and outbound traffic.
+
+## Scalability Design
+1. The system's scalability is managed by AKS features like horizontal pod autoscaling and virtual node provisioning.
+2. Performance metrics trigger scaling events, ensuring the system responds to workload changes efficiently.
+3. Azure Load Balancer manages peak loads, while application-level caching reduces latency and improves user experience.
+4. Load balancing utilizes DNS round-robin and Azure Traffic Manager, ensuring equitable distribution of traffic
+
+ and high availability.
+5. Azure's global infrastructure and Cosmos DB's data replication support geographic distribution and scalability.
+6. Predictive scaling and resource allocation are based on usage patterns, ensuring resources are optimized.
+7. API management policies and caching techniques scale third-party integrations effectively.
+8. Database scalability is addressed by Cosmos DB's auto-scaling and strategic data partitioning.
+9. The responsive user interface adapts to various devices, with CDN support for static assets.
+10. The system is architected for multi-region deployment within Azure, with data residency considerations guiding placement decisions.
+
+## Disaster Recovery and Business Continuity Design
+1. Azure Backup and Site Recovery manage data backups and enable quick restoration, maintaining business continuity.
+2. Automatic pod rescheduling and region failover ensure that the system remains operational even in the event of a failure.
+3. Recovery objectives are clearly defined, with an RTO of 1 hour and RPO of 15 minutes for critical components.
+4. Redundant systems across Azure regions provide resilience during outages, with traffic routing managing availability.
+5. Emergency rollbacks leverage Azure DevOps for rapid reversion to stable states.
+6. Geo-redundant backups and a documented recovery process offer robust protection against data loss.
+7. Communication protocols during disaster recovery follow an incident response plan, ensuring stakeholders are informed and involved.
+8. Regular testing of DR processes validates the effectiveness of failover mechanisms and recovery procedures.
+9. Stakeholder communication during DR events is guided by the incident response plan, ensuring clarity and coordination.
+10. Data replication and geographic redundancy are built into the system's architecture, utilizing Azure's cross-region capabilities.
+
+## Network Design
+1. Azure's hub-and-spoke network topology offers a scalable and secure networking framework.
+2. Azure Firewall, along with NSGs and DDoS protection, safeguards the network.
+3. Multiple network paths and Azure ExpressRoute connections provide network redundancy.
+4. Azure Front Door accelerates traffic, while Proximity Placement Groups reduce latency.
+5. Secure remote access is enabled via Azure VPN Gateway, with conditional access policies in place.
+6. Azure Virtual Network facilitates network segmentation, allowing for secure and organized network spaces.
+7. SFTP on Azure Blob Storage ensures secure file transfers.
+8. Azure Load Balancer and Application Gateway manage network traffic efficiently.
+9. Firewall configurations are regularly reviewed to maintain security standards.
+10. The network design is future-proof, capable of supporting expansion and cloud migration initiatives.
+
+## Monitoring and Observability Design
+1. Service response times, throughput, error rates, and user activity are among the key metrics monitored.
+2. Azure Dashboard and Grafana create visual representations of system health and performance.
+3. Azure Log Analytics aggregates logs, while Azure Monitor offers comprehensive system monitoring.
+4. Real-time alerts from Azure Monitor notify administrators of potential system issues.
+5. Unified cloud component monitoring provides insights into the health of all Azure-hosted services.
+6. Application Insights tracks user experience, collecting web analytics and feedback.
+7. AKS monitoring tools and Azure Monitor for containers offer visibility into the health of containerized services.
+8. Comprehensive logging and diagnostic features from Azure Application Insights aid in event correlation and troubleshooting.
+9. Monitoring configurations are versioned and managed as code, allowing for automated updates and consistency.
+10. The monitoring system dynamically adapts to changes in system scale and complexity, ensuring continuous observability.
+
+## Approval
+The below signatures certify that the stakeholders have reviewed and approved the design document, granting the team permission to proceed with the development as outlined in this document.
+
+| Role                | Name                          | Signature                   | Date       |
+|---------------------|-------------------------------|-----------------------------|------------|
+| CTO                 | John Smith                    |                             | 2023-11-21 |
+| Project Manager     | Alex Johnson                  |                             | 2023-11-21 |
+| Lead Developer      | Maria Garcia                  |                             | 2023-11-21 |
+| QA Lead             | David Lee                     |                             | 2023-11-21 |
+| Data Privacy Officer| Susan Chen                    |                             | 2023-11-21 |
+
+*Digital signatures or electronic approvals may be used as an alternative to handwritten signatures, where appropriate and accepted by the organization.*
+```
+
+This markdown format should make it easier to present your design document. You can copy and paste this into your preferred markdown editor or document management system for further customization and styling.
+
+## Design Document Format Specification
+Creating a design document with elements like a Title, Introduction, Executive Summary, Table of Contents, and organizing the provided text to match the table of contents is a structured process. Let's break down each element:
+
+```
+1. **Title Page**: This should include the title of your document, which should be concise and reflective of the content. Also include any necessary details like the author's name, date, version number, and company or project logo if applicable.
+
+2. **Introduction**: This section sets the stage for your document. It should provide a brief overview of the document's purpose, scope, and what the reader can expect to find in the document.
+
+3. **Executive Summary**: This is a high-level summary of the document's main points. It should be concise and give a snapshot of the key elements and conclusions of the document. The executive summary is particularly important for readers who need to understand the gist of the content without going through the entire document.
+
+4. **Table of Contents**: This will list all the sections and subsections of the document with page numbers. It should be detailed enough to allow readers to easily find specific sections.
+
+5. **Reformatting and Organizing the Provided Text**: You need to ensure that the text provided aligns with the structure outlined in the Table of Contents. This involves organizing the text into sections and subsections as per the topics listed in the Table of Contents.
+
+Here's a basic layout you could follow:
+
+### Title Page
+- Document Title
+- Subtitle (if applicable)
+- Author(s)
+- Date
+- Version Number
+- Company/Project Logo (if applicable)
+
+### Introduction
+- Purpose of the Document
+- Scope
+- Overview of Contents
+
+### Executive Summary
+- Key Points
+- Conclusions
+
+### Table of Contents
+- Section 1: [Title]
+  - Subsection 1.1: [Title]
+  - Subsection 1.2: [Title]
+- Section 2: [Title]
+  - Subsection 2.1: [Title]
+  - Subsection 2.2: [Title]
+- [Continue as needed]
+
+### Main Content
+- **Section 1: [Title]**
+  - **Subsection 1.1**: [Details]
+  - **Subsection 1.2**: [Details]
+- **Section 2: [Title]**
+  - **Subsection 2.1**: [Details]
+  - **Subsection 2.2**: [Details]
+- [Continue as needed]
+
+### [Other Sections as Required]
+- Conclusion
+- References
+- Appendices
+
+When organizing the text, ensure that each section flows logically into the next and that the information is presented in a clear, concise manner. Use headings and subheadings to break up the text and make it more readable.
+
+Remember, the design and layout of the document should reflect its importance and intended audience. Use appropriate formatting, such as bullet points for lists, bold headings, and consistent fonts and spacing, to enhance readability.
+```
