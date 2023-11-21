@@ -1533,6 +1533,5 @@ The Data Flow Diagrams (DFDs) provided herein illustrate the flow of information
 ```
 
 *Note: These DFDs are simplified representations and do not capture every component and data interaction in the system. They are intended to provide a high-level understanding of the data flows associated with the search functionality.*
-```
 
 This appendix visually communicates the key components and data interactions of the advanced search functionality. It helps stakeholders understand how the system will manage and process search requests, which is vital for clarifying system design and identifying potential bottlenecks or security concerns.
