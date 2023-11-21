@@ -878,7 +878,7 @@ The below signatures certify that the stakeholders have reviewed and approved th
 
 This markdown format should make it easier to present your design document. You can copy and paste this into your preferred markdown editor or document management system for further customization and styling.
 
-## Design Document Format Specification
+## Design Document Format Specification (OLD Don't Use!)
 Creating a design document with elements like a Title, Introduction, Executive Summary, Table of Contents, and organizing the provided text to match the table of contents is a structured process. Let's break down each element:
 
 ```
@@ -938,3 +938,112 @@ When organizing the text, ensure that each section flows logically into the next
 
 Remember, the design and layout of the document should reflect its importance and intended audience. Use appropriate formatting, such as bullet points for lists, bold headings, and consistent fonts and spacing, to enhance readability.
 ```
+
+## Domain Model Example
+Understood. To define a domain model for a virtual machine that is implementation agnostic and only describes types and their relationships, we can simplify the markdown document. We won't need to specify database-specific features like triggers but will focus on the structure and relationships of the types.
+
+```markdown
+# Domain Model Documentation
+
+## Entity: VirtualMachine
+This entity represents a virtualized computing environment or a 'Virtual Machine' (VM).
+
+### Properties
+- `ID`: A unique identifier for the VM.
+- `Name`: A descriptive name for the VM.
+- `Status`: The operational status of the VM (e.g., Running, Stopped, Suspended).
+- `IPAddress`: The network IP address assigned to the VM.
+
+### Collections
+- `SoftwarePackages`: A list representing the software installed on the VM.
+
+## Entity: SoftwarePackage
+This entity represents a software package that can be installed on a VM.
+
+### Properties
+- `PackageID`: A unique identifier for the software package.
+- `PackageName`: The name of the software package.
+- `Version`: The installed version of the software package.
+
+## Relationships
+- `VirtualMachine - Hosts -> SoftwarePackage`: A VM can host multiple software packages. This is a one-to-many relationship where one `VirtualMachine` entity is associated with many `SoftwarePackage` entities.
+
+## Constraints (Business Rules)
+- `VMNameUniqueness`: Each VM should have a unique name.
+- `VMStatusValues`: The `Status` of a VM must be one of the predefined states.
+
+## Descriptions of Relationships
+- `Hosts`: The 'Hosts' relationship indicates that a VirtualMachine contains a collection of SoftwarePackages. The VM is responsible for the maintenance and lifecycle of these packages.
+
+## Entity Descriptions
+- `VirtualMachine`: It includes foundational properties such as ID and IPAddress, and it also encapsulates the state of the VM through the Status property.
+- `SoftwarePackage`: It details the software aspects within a VM, including identifiers and versioning.
+
+```
+
+Subsequent Python Code
+```python
+class VirtualMachine:
+    """
+    This class represents a virtualized computing environment or a 'Virtual Machine' (VM).
+    """
+    
+    def __init__(self, vm_id, name, status, ip_address):
+        """
+        Initializes a new instance of the VirtualMachine class.
+        
+        :param vm_id: A unique identifier for the VM.
+        :param name: A descriptive name for the VM.
+        :param status: The operational status of the VM (e.g., Running, Stopped, Suspended).
+        :param ip_address: The network IP address assigned to the VM.
+        """
+        self.ID = vm_id
+        self.Name = name
+        self.Status = status
+        self.IPAddress = ip_address
+        self.SoftwarePackages = []  # This will hold a list of SoftwarePackage instances.
+
+    def __str__(self):
+        return f"VirtualMachine(ID={self.ID}, Name={self.Name}, Status={self.Status}, IPAddress={self.IPAddress})"
+
+    def add_software_package(self, software_package):
+        """
+        Adds a software package to the VM.
+
+        :param software_package: An instance of SoftwarePackage to be added to the VM.
+        """
+        self.SoftwarePackages.append(software_package)
+
+
+class SoftwarePackage:
+    """
+    This class represents a software package that can be installed on a VM.
+    """
+    
+    def __init__(self, package_id, package_name, version):
+        """
+        Initializes a new instance of the SoftwarePackage class.
+        
+        :param package_id: A unique identifier for the software package.
+        :param package_name: The name of the software package.
+        :param version: The installed version of the software package.
+        """
+        self.PackageID = package_id
+        self.PackageName = package_name
+        self.Version = version
+
+    def __str__(self):
+        return f"SoftwarePackage(PackageID={self.PackageID}, PackageName={self.PackageName}, Version={self.Version})"
+    
+# Example Usage:
+vm = VirtualMachine(vm_id=1, name="VM1", status="Running", ip_address="192.168.1.1")
+software = SoftwarePackage(package_id=101, package_name="ExampleSoftware", version="1.0.0")
+vm.add_software_package(software)
+
+print(vm)
+print(vm.SoftwarePackages[0])
+
+```
+
+In this version, the focus is on defining the entities, their properties, and the relationships between them without delving into implementation specifics. This approach ensures that the document remains relevant regardless of the technology used to implement the model.
+
