@@ -6,21 +6,48 @@ This framework leverages the "Documentation as Code" methodology, applying the p
 
 ## Repository Structure
 
-The repository is organized into directories reflecting the different types of documents:
+The repository is organized into directories reflecting the different types of documents.  Below are the descriptions for each directory within the IT project management documentation framework:
 
-/feature-requests
-/business-cases
-/service-portfolio
-/requirements
-/design-specifications
-/agile-artifacts
-/deployment
-/operations
-/monitoring-feedback
-/project-management
-/quality-assurance
-/training-materials
-/risk-compliance
+1. **/feature-requests**
+   - This directory contains forms and templates to capture new ideas for features or improvements suggested by stakeholders or customers. Each file typically represents an individual feature request, outlining the proposed benefit, use case, and any initial assessments or discussions.
+
+2. **/business-cases**
+   - Within this directory are documents that provide detailed justification for pursuing a project. These documents outline the expected benefits, costs, potential risks, and strategic alignment of each proposed feature or project initiative.
+
+3. **/service-portfolio**
+   - The service-portfolio directory holds a list of all IT services managed by the organization, including detailed descriptions and statuses of services that are in planning, development, or operational stages.
+
+4. **/requirements**
+   - This directory is dedicated to capturing all the requirements documents, which include detailed functional and non-functional specifications that the product or service must meet. It serves as the foundation for subsequent design and development work.
+
+5. **/design-specifications**
+   - Here, you'll find technical documents that describe the intended system architecture, data models, interfaces, and other detailed design elements required to realize the requirements.
+
+6. **/agile-artifacts**
+   - Agile artifacts, such as product backlogs, sprint backlogs, burndown charts, and retrospectives, are stored here. These documents are pivotal for tracking the progress and adapting the plan in agile-driven projects.
+
+7. **/deployment**
+   - The deployment directory houses all the deployment plans, which include strategies for releasing software into production, along with schedules, resource requirements, and rollback procedures.
+
+8. **/operations**
+   - Operational documentation, including runbooks, OLAs, and any procedure manuals necessary for the maintenance and day-to-day management of IT services, is kept here.
+
+9. **/monitoring-feedback**
+   - This directory is for documents and reports that detail the performance monitoring of IT services, as well as feedback collection mechanisms and responses, which are crucial for continuous improvement.
+
+10. **/project-management**
+    - Comprehensive project management plans, timelines, resource allocations, meeting minutes, and status updates are stored in this directory, providing an overview and ongoing insight into project progress.
+
+11. **/quality-assurance**
+    - The quality-assurance folder includes plans and reports related to testing strategies, test cases, quality standards, and results from QA activities to ensure the product meets the defined requirements.
+
+12. **/training-materials**
+    - This directory holds all training-related content, including user manuals, training guides, instructional videos, and other resources developed to educate end-users and support teams on the IT service.
+
+13. **/risk-compliance**
+    - Risk management plans, compliance checklists, and any assessments or audits related to project risks and regulatory requirements are collected here, ensuring that projects adhere to all necessary standards and best practices.
+
+Each directory acts as a container for its respective documents, ensuring an organized and systematic approach to maintaining vital project documentation throughout the lifecycle of the IT service.
 
 ## Documentation Practices
 
