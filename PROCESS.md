@@ -126,3 +126,61 @@ Certainly! Let’s map out the **"Integrated Documentation Lifecycle Framework" 
 
 By meticulously detailing each stage and the expected outcomes, the IDLF emphasizes the importance of thoroughness, collaboration, and adaptability in managing project documentation. The framework ensures that documents are not static but evolve with the project, maintaining relevance and accuracy from inception to completion.
 
+## Ways to Write Prompts
+
+* The Task sentence needs to articulate the end goal and start with an action verb.
+* Use three guiding questions to help structure relevant and sufficient Context.
+* Exemplars can drastically improve the quality of the output by giving specific examples for the AI to reference.
+* For Persona, think of who you would ideally want the AI to be in the given task situation.
+* Visualizing your desired end result will let you know what format to use in your prompt.
+* And you can actually use ChatGPT to generate a list of Tone keywords for you to use!
+
+[task]
+    - Generate ...
+        - e.x. Generate a 3 month training program for me to follow
+
+    - Analyze ...
+    - Summarize ...
+    - Categorize ...
+
+[context]
+    - User background
+        - e.x. I'm a 70kg male ...
+    - Success looks like this
+        - e.x. looking to put on 5kg of muscle mass
+    - Environment 
+        - I only have time to go to the gym twice a week, and for 1 hour sessions
+[exemplar]
+    - Just give an example of what you want the output to be or look like.  IF you have an example that is even better.
+      worst case scenario you just describe exactly how you want things to be structured and how you want them to look.
+
+[persona]
+    - Have the GPT act in the role of an expert in the area you are seeking advice
+        - e.x. You are an experienced physical therapistc with over 20 years of ...
+
+[format]
+    - How do you want your results displayed:  tables, lists, header styles, TOC's
+    - Emails
+    - Codeblocks
+    - MArkdown 
+    - Bold, ITalics, etc
+
+[tone]
+    - Be Professional
+    - VBe Polite
+    - Be Clear
+    - Be Friendly 
+    - 
+
+Example:
+
+You are a senior product marketing managed for Apple and you have just unveiled the latest Apple product in 
+collaboration with Tesla, the Apple Car, and received 12,000 pre-orders, which is 200% higher than target.
+
+Write an email to your boss, Tim Cookie, sharing the Positive news 
+
+The email should include a TL;DR (too long ; didn't read) section, propject background, (why this product came 
+into existence), business results section (quantifiable business metrics), and end with a section thnaking the product
+and engineering teams.
+
+Use clear and concise language and write in a confident yet friendly tone
